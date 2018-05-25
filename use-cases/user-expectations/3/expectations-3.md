@@ -1,4 +1,4 @@
-### Use Case #expectations-2
+### Use Case #expectations-3
 
 Name: Promise queue documentation
 

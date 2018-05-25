@@ -54,7 +54,7 @@ How to read this:
   - We don't have a fully promisified or promisifiable core yet. (We couldn't think of a solid case, `emitter.once()` comes to mind)
   - The second most common problem is when users need to convert APIs to promises. This is somewhat addressed by `util.promisify` but Node.js doesn't have a great promise API story yet. Great progress by @jasnell and @addaleax. (use case #expectations-2)
   - We don't have documentation of how the promise queue is integrated into Node.js (use case #expectations-3)
-  - Users expect to be able to use `async/await` with things like `.forEach` but they can't - can we communicate it better? (with warnings for no returned promises).
+  - Users expect to be able to use `async/await` with things like `.forEach` but they can't - can we communicate it better? (with warnings for no returned promises). (use case #expectations-4)
   - Some people transpiling to JavaScript from other languages have reported a hard time with meaningful stack traces.
   
 
