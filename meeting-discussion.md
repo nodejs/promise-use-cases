@@ -19,7 +19,7 @@ Methodology:
 
  - Stack Traces:
   - Stack trace missing when writing promise code and not using the inspector for example in Mocha [1] (use case #5)
-  - Async stack traces cannot be controlled by the user - can't log errors in production
+  - Async stack traces cannot be controlled by the user - can't log errors in production (use case #6);
   - Want to configure when to "break into debugger" or "take core dump" on rejections easily.
 
  - Unhandled Rejections:
