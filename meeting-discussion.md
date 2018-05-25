@@ -58,7 +58,7 @@ How to read this:
   
 
 ### Extras:
-  - Can't implement userland features on top of native promises - such as cancellation, because of async/await
+  - Can't implement userland features on top of native promises - such as cancellation, because of `async`/`await` (#extras-1)
   - No way to prototype and experiment with proposals that do this in Node.js - we might want to expose the capability under a flag. 
   - Users don't agree about how cancellation should look like - need to provide a platform way for users to experiment with it so that the TC can weigh alternatives and solutions can emerge from the community.
   - There is no standard way in promisified or promise-based Node.js APIs for controlling the operation - such as DOM's SignalController (/AbortController). 
