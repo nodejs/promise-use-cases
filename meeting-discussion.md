@@ -1,6 +1,11 @@
 
 Summary of repo issues based on meeting between @benjamingr and @MadaraUchiha
 
+How to read this:
+ - All of the "what we should do?" is just ideas, none of it means Node.js intends to do it or things it's a good idea.
+ - All of the use cases are based on community feedback from users (methodology below).
+ - Feedback, criticism and ideas are welcome - either in public (open an issue) or in private.
+
 ### Methodology:
 
  - Solicit feedback from community
@@ -41,7 +46,7 @@ Summary of repo issues based on meeting between @benjamingr and @MadaraUchiha
     - For example people request being able to reproduce race conditions. (#testing-2)
 
 ### Performance:
-  - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`.
+  - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`. (use case #15)
   - Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions.   
 
 ### User Expectations:
