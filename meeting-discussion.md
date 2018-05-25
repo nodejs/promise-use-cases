@@ -13,7 +13,7 @@ Methodology:
 
  - Warnings:
   - Forgetting to return promises from `then` handlers or `async` functions (when not awaiting). (use case #1)
-  - Forgetting to `await` promises in `async` functions. 
+  - Forgetting to `await` promises in `async` functions. (use case #2)
   - Promise constructor rejecting and then resolving or vice versa (or with sync errors).
   - Promises in recursive assimilation never resolve creating a confusing case for users.
 
