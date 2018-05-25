@@ -56,6 +56,7 @@ How to read this:
   - We don't have documentation of how the promise queue is integrated into Node.js (use case #expectations-3)
   - Users expect to be able to use `async/await` with things like `.forEach` but they can't - can we communicate it better? (with warnings for no returned promises). (use case #expectations-4)
   - Some people transpiling to JavaScript from other languages have reported a hard time with meaningful stack traces. Reference: https://github.com/degree9/meta/issues/22
+  - Extracting resolution/rejection abilities from Promises is awkward and confusing. (use case #exepctations-5)
   
 
 ### Extras:
