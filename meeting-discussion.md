@@ -50,7 +50,8 @@ How to read this:
   - Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions. (use case #16)
 
 ### User Expectations:
-  - We don't have a fully promisified or promisifiable core yet - the most common error people have in Stack Overflow is when they wrap promises in other promises needlessly (explicit construction). Users still need to write `new Promise` in some cases.
+  - Users still need to write `new Promise` in some cases. the most common error people have in Stack Overflow is when they wrap promises in other promises needlessly (explicit construction) (use case #expectations-1)
+  - We don't have a fully promisified or promisifiable core yet.
   - The second most common problem is when users need to convert APIs to promises. This is somewhat addressed by `util.promisify` but Node.js doesn't have a great promise API story yet. Great progress by @jasnell and @addaleax.
   - We don't have documentation of how the promise queue is integrated into Node.js
   - Users expect to be able to use `async/await` with things like `.forEach` but they can't - can we communicate it better? (with warnings for no returned promises).
