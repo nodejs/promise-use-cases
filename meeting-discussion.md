@@ -31,7 +31,7 @@ Summary of repo issues based on meeting between @benjamingr and @MadaraUchiha
 
 ### Forgotten promises:
   - If I have a promise that never resolves - there is no easy way to know about it.
-  - There is no easy way to address the promises "in a scope" - for example to gather tracing information about all promises in a given request transaction or whatnot. C# synchronization context.
+  - There is no easy way to address the promises "in a scope" - for example to gather tracing information about all promises in a given request transaction or whatnot. C# synchronization context. (use case #forgotten-1)
 
 ### Testing:
   - Fake timers break with promises because there is no way to "pump" the event loop. (#13)
