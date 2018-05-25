@@ -32,7 +32,7 @@ Methodology:
   - There is no easy way to address the promises "in a scope" - for example to gather tracing information about all promises in a given request transaction or whatnot. C# synchronization context.
 
  - Testing:
-  - Fake timers break with promises because there is no way to "pump" the event loop.
+  - Fake timers break with promises because there is no way to "pump" the event loop. (#13)
     - Common request from timer users - all of Sinon.JS and Jest 
       - people currently transpiling their async/await code in order to test it - which isn't great.
   - No way to control where an async function is and test different synchronization possibilities easily
