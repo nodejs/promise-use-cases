@@ -23,8 +23,8 @@ Methodology:
   - Want to configure when to "break into debugger" or "take core dump" on rejections easily. (use case #7)
 
  - Unhandled Rejections:
-  - Our current heuristic can be problematic with async functions (use case #8) [2]
-  - No throw on GC yet (Reuben is working on it)
+  - Our current heuristic can be problematic with async functions (use case #8)
+  - No throw on GC yet (Reuben is working on it) (use case #9)
   - People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))`
 
  - Forgotten promises:
