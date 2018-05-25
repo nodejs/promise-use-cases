@@ -25,7 +25,7 @@ Methodology:
  - Unhandled Rejections:
   - Our current heuristic can be problematic with async functions (use case #8)
   - No throw on GC yet (Reuben is working on it) (use case #9)
-  - People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))`
+  - People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))` (use case #10)
 
  - Forgotten promises:
   - If I have a promise that never resolves - there is no easy way to know about it.
