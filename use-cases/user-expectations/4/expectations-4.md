@@ -33,4 +33,5 @@ Zoe can't wait on the results of all of the files, she also can't read the files
   Which is even more counter-intuitive.
 
 ### What can we maybe do better
-Perhaps provide an official documentation/tutorial on the matter.
+- Perhaps provide an official documentation/tutorial on the matter. 
+- Warn when promises are created within async functions (forEach calling the internal `async` function) but are not returned or awaited.
