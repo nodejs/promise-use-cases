@@ -14,8 +14,8 @@ Methodology:
  - Warnings:
   - Forgetting to return promises from `then` handlers or `async` functions (when not awaiting). (use case #1)
   - Forgetting to `await` promises in `async` functions. (use case #2)
-  - Promise constructor rejecting and then resolving or vice versa (or with sync errors) (use case #3).
-  - Promises in recursive assimilation never resolve creating a confusing case for users.
+  - Promise constructor rejecting and then resolving or vice versa (or with sync errors). (use case #3)
+  - Promise constructor allows for Promises that never resolve. (use case #4)
 
  - Stack Traces:
   - Stack trace missing when writing promise code and not using the inspector for example in Mocha [1]
