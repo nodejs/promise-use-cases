@@ -1,4 +1,4 @@
-### Use Case #9
+### Use Case #unhandled-rejections-2
 
 Name: No throw on GC yet (Reuben is working on it)
 

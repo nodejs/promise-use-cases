@@ -1,4 +1,4 @@
-### Use Case #8
+### Use Case #unhandled-rejections-1
 
 Name: Unhandled Rejections: Our current heuristic can be problematic with async functions
 
