@@ -55,7 +55,7 @@ How to read this:
   - The second most common problem is when users need to convert APIs to promises. This is somewhat addressed by `util.promisify` but Node.js doesn't have a great promise API story yet. Great progress by @jasnell and @addaleax. (use case #expectations-2)
   - We don't have documentation of how the promise queue is integrated into Node.js (use case #expectations-3)
   - Users expect to be able to use `async/await` with things like `.forEach` but they can't - can we communicate it better? (with warnings for no returned promises). (use case #expectations-4)
-  - Some people transpiling to JavaScript from other languages have reported a hard time with meaningful stack traces.
+  - Some people transpiling to JavaScript from other languages have reported a hard time with meaningful stack traces. Reference: https://github.com/degree9/meta/issues/22
   
 
 ### Extras:
@@ -64,6 +64,6 @@ How to read this:
   - Users don't agree about how cancellation should look like - need to provide a platform way for users to experiment with it so that the TC can weigh alternatives and solutions can emerge from the community.
   - There is no standard way in promisified or promise-based Node.js APIs for controlling the operation - such as DOM's SignalController (/AbortController). 
   - Users have asked for a way to "unsubscribe" promise listeners ("unthen") - Kyle Simpson opened an issue about this
-  - Users expect(ed) to be able to quit promise chains early -  this is the most `+1`d issue in Bluebird ever https://github.com/petkaantonov/bluebird/issues/581
+  - Users expect(ed) to be able to quit promise chains early - this is the most `+1`d issue in Bluebird ever https://github.com/petkaantonov/bluebird/issues/581
   - We still don't have a great promises postmortem analysis story. Note that in the 3+ years we've had promises in Node.js literally not a single user complained about this in Node.js or the bluebird/q/when/rsvp tracker as far as I know. It is still important to some stakeholders.
   
