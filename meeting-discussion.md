@@ -12,10 +12,11 @@ Methodology:
  - Sit with Itai to hear about his cancellation use case. 
 
  - Warnings:
-  - Forgetting to return promises from `then` handlers or `async` functions (when not awaiting). (use case #1)
-  - Forgetting to `await` promises in `async` functions. 
-  - Promise constructor rejecting and then resolving or vice versa (or with sync errors).
-  - Promises in recursive assimilation never resolve creating a confusing case for users.
+  - Forgetting to return promises from `then` handlers or `async` functions (when not awaiting). (use case #warnings-1)
+  - Forgetting to `await` promises in `async` functions. (use case #warnings-2)
+  - Promise constructor rejecting and then resolving or vice versa (or with sync errors). (use case #warnings-3)
+  - Promise constructor allows for Promises that never resolve. (use case #warnings-4)
+  - Recursive Promise waiting can result in node existing. (use case #warnings-5)
 
  - Stack Traces:
   - Stack trace missing when writing promise code and not using the inspector for example in Mocha (use case #5)
