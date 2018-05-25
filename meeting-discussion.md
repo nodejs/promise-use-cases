@@ -46,8 +46,8 @@ How to read this:
     - For example people request being able to reproduce race conditions. (#testing-2)
 
 ### Performance:
-  - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`. (use case #15)
-  - Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions. (use case #16)
+  - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`. (#performance-1)
+  - Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions. (#performance-2)
 
 ### User Expectations:
   - Users still need to write `new Promise` in some cases. the most common error people have in Stack Overflow is when they wrap promises in other promises needlessly (explicit construction) (use case #expectations-1)
@@ -58,13 +58,12 @@ How to read this:
   - Some people transpiling to JavaScript from other languages have reported a hard time with meaningful stack traces. Reference: https://github.com/degree9/meta/issues/22
   - Extracting resolution/rejection abilities from Promises is awkward and confusing. (use case #exepctations-5)
   
-
 ### Extras:
-  - Can't implement userland features on top of native promises - such as cancellation, because of async/await
-  - No way to prototype and experiment with proposals that do this in Node.js - we might want to expose the capability under a flag. 
-  - Users don't agree about how cancellation should look like - need to provide a platform way for users to experiment with it so that the TC can weigh alternatives and solutions can emerge from the community.
-  - There is no standard way in promisified or promise-based Node.js APIs for controlling the operation - such as DOM's SignalController (/AbortController). 
-  - Users have asked for a way to "unsubscribe" promise listeners ("unthen") - Kyle Simpson opened an issue about this
-  - Users expect(ed) to be able to quit promise chains early - this is the most `+1`d issue in Bluebird ever https://github.com/petkaantonov/bluebird/issues/581
-  - We still don't have a great promises postmortem analysis story. Note that in the 3+ years we've had promises in Node.js literally not a single user complained about this in Node.js or the bluebird/q/when/rsvp tracker as far as I know. It is still important to some stakeholders.
-  
+  - Can't implement userland features on top of native promises - such as cancellation, because of `async`/`await` (#extras-1)
+     - No way to prototype and experiment with proposals that do this in Node.js - we might want to expose the capability under a flag. 
+  - Users don't agree about how cancellation should look like - need to provide a platform way for users to experiment with it so that the TC can weigh alternatives and solutions can emerge from the community. (#extras-1)
+  - There is no standard way in promisified or promise-based Node.js APIs for controlling the operation - such as DOM's SignalController (/AbortController). (#extras-2)
+  - Users have asked for a way to "unsubscribe" promise listeners ("unthen") - Kyle Simpson opened an issue about this (#extras-3)
+  - Users expect(ed) to be able to quit promise chains early -  this is the most `+1`d issue in Bluebird ever https://github.com/petkaantonov/bluebird/issues/581 (#extras-4)
+  - We still don't have a great promises postmortem analysis story. (#extras-5)
+ 

@@ -6,10 +6,11 @@ The goal is to provide feedback to Node.js and V8 in order to possibly expose AP
 
 This is to discuss diagnostic/debugging experience that could be done better.
 
+Please see [the meeting discussion](./meeting-discussion.md) for current use cases we have.
+
 ### Contributing
 
-Please consider PRing in things that are confusing with promises right now or are done better in userland. I will present the results (with your name and contribution) to Node.js core.
-
+Please consider making a pull request for that are confusing with promises right now or are done better in userland. I will present the results (with your name and contribution) to Node.js core.
 
 **No prior Node.js contribution experience required**. If you're a user of promises and thing we should do things better - we would love to hear about your use case.
 
