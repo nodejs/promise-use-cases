@@ -12,8 +12,8 @@ Methodology:
  - Sit with Itai to hear about his cancellation use case. 
 
  - Warnings:
-  - Forgetting to return promises from `then` handlers or `async` functions (when not awaiting).
-  - Forgetting to `await` promises in `async` functions.
+  - Forgetting to return promises from `then` handlers or `async` functions (when not awaiting). (use case #1)
+  - Forgetting to `await` promises in `async` functions. 
   - Promise constructor rejecting and then resolving or vice versa (or with sync errors).
   - Promises in recursive assimilation never resolve creating a confusing case for users.
 
