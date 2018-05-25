@@ -22,7 +22,7 @@ How to read this:
   - Forgetting to `await` promises in `async` functions. (use case #warnings-2)
   - Promise constructor rejecting and then resolving or vice versa (or with sync errors). (use case #warnings-3)
   - Promise constructor allows for Promises that never resolve. (use case #warnings-4)
-  - Recursive Promise waiting can result in node existing. (use case #warnings-5)
+  - Recursive Promise waiting can result in Node.js exiting. (use case #warnings-5)
 
 ### Stack Traces:
   - Stack trace missing when writing promise code and not using the inspector for example in Mocha (use case #stack-traces-1)
@@ -50,13 +50,14 @@ How to read this:
   - Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions. (#performance-2)
 
 ### User Expectations:
-  - We don't have a fully promisified or promisifiable core yet - the most common error people have in Stack Overflow is when they wrap promises in other promises needlessly (explicit construction). Users still need to write `new Promise` in some cases.
-  - The second most common problem is when users need to convert APIs to promises. This is somewhat addressed by `util.promisify` but Node.js doesn't have a great promise API story yet. Great progress by @jasnell and @addaleax.
-  - We don't have documentation of how the promise queue is integrated into Node.js
-  - Users expect to be able to use `async/await` with things like `.forEach` but they can't - can we communicate it better? (with warnings for no returned promises).
-  - Some people transpiling to JavaScript from other languages have reported a hard time with meaningful stack traces.
+  - Users still need to write `new Promise` in some cases. the most common error people have in Stack Overflow is when they wrap promises in other promises needlessly (explicit construction) (use case #expectations-1)
+  - We don't have a fully promisified or promisifiable core yet. (We couldn't think of a solid case, `emitter.once()` comes to mind)
+  - The second most common problem is when users need to convert APIs to promises. This is somewhat addressed by `util.promisify` but Node.js doesn't have a great promise API story yet. Great progress by @jasnell and @addaleax. (use case #expectations-2)
+  - We don't have documentation of how the promise queue is integrated into Node.js (use case #expectations-3)
+  - Users expect to be able to use `async/await` with things like `.forEach` but they can't - can we communicate it better? (with warnings for no returned promises). (use case #expectations-4)
+  - Some people transpiling to JavaScript from other languages have reported a hard time with meaningful stack traces. Reference: https://github.com/degree9/meta/issues/22
+  - Extracting resolution/rejection abilities from Promises is awkward and confusing. (use case #exepctations-5)
   
-
 ### Extras:
   - Can't implement userland features on top of native promises - such as cancellation, because of `async`/`await` (#extras-1)
      - No way to prototype and experiment with proposals that do this in Node.js - we might want to expose the capability under a flag. 

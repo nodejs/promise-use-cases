@@ -36,5 +36,5 @@ getDeep('a').then(allDeps => {
 //   Examining c
 //   Examining d
 // Because at one point a waits on the result of a which means there
-// is no background process for the promise left running: the nodejs app closes
+// is no background process for the promise left running: the Node.js app closes
 //
