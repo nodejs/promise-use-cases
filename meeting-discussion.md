@@ -18,12 +18,12 @@ Methodology:
   - Promises in recursive assimilation never resolve creating a confusing case for users.
 
  - Stack Traces:
-  - Stack trace missing when writing promise code and not using the inspector for example in Mocha [1] (use case #5)
+  - Stack trace missing when writing promise code and not using the inspector for example in Mocha (use case #5)
   - Async stack traces cannot be controlled by the user - can't log errors in production (use case #6);
   - Want to configure when to "break into debugger" or "take core dump" on rejections easily. (use case #7)
 
  - Unhandled Rejections:
-  - Our current heuristic can be problematic with async functions [2]
+  - Our current heuristic can be problematic with async functions (use case #8) [2]
   - No throw on GC yet (Reuben is working on it)
   - People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))`
 
@@ -60,57 +60,3 @@ Methodology:
   - Users expect(ed) to be able to quit promise chains early -  this is the most `+1`d issue in Bluebird ever https://github.com/petkaantonov/bluebird/issues/581
   - We still don't have a great promises postmortem analysis story. Note that in the 3+ years we've had promises in Node.js literally not a single user complained about this in Node.js or the bluebird/q/when/rsvp tracker as far as I know. It is still important to some stakeholders.
   
-
-
-
-
-
-[1] 
-```
-async function a() {
-  await Promise.resolve().then(b);   
-}
-
-async function b() {
-  c();   
-}
-
-async function c() {
-  await require('util').promisify(setTimeout)(100);
-  throw new Error(); 
-}
-
-a();
-```
-
-vs 
-
-```
-function a() {
-  b();   
-}
-
-function b() {
-  c();   
-}
-
- function c() {
-//  await require('util').promisify(setTimeout)(100);
-  throw new Error(); 
-}
-
-a();
-```
-
-
-[2]
-
-```
-async function foo() {
-    var p1 = getSomeApi();
-    var p2 = getSomeOther();
-    await p1;
-    // if p2 rejects - it will emit an unhandled rejection
-    await p2; // although it is awaited here
-}
-```
