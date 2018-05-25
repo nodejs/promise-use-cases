@@ -34,11 +34,11 @@ Summary of repo issues based on meeting between @benjamingr and @MadaraUchiha
   - There is no easy way to address the promises "in a scope" - for example to gather tracing information about all promises in a given request transaction or whatnot. C# synchronization context. (use case #forgotten-1)
 
 ### Testing:
-  - Fake timers break with promises because there is no way to "pump" the event loop. (#13)
+  - Fake timers break with promises because there is no way to "pump" the event loop. (#testing-1)
     - Common request from timer users - all of Sinon.JS and Jest 
       - people currently transpiling their async/await code in order to test it - which isn't great.
   - No way to control where an async function is and test different synchronization possibilities easily
-    - For example people request being able to reproduce race conditions. (#14)
+    - For example people request being able to reproduce race conditions. (#testing-2)
 
 ### Performance:
   - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`.
