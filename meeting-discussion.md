@@ -25,25 +25,25 @@ How to read this:
   - Recursive Promise waiting can result in node existing. (use case #warnings-5)
 
 ### Stack Traces:
-  - Stack trace missing when writing promise code and not using the inspector for example in Mocha (use case #5)
-  - Async stack traces cannot be controlled by the user - can't log errors in production (use case #6);
-  - Want to configure when to "break into debugger" or "take core dump" on rejections easily. (use case #7)
+  - Stack trace missing when writing promise code and not using the inspector for example in Mocha (use case #stack-traces-1)
+  - Async stack traces cannot be controlled by the user - can't log errors in production (use case #stack-traces-2)
+  - Want to configure when to "break into debugger" or "take core dump" on rejections easily. (use case #stack-traces-3)
 
 ### Unhandled Rejections:
-  - Our current heuristic can be problematic with async functions (use case #8)
-  - No throw on GC yet (Reuben is working on it) (use case #9)
-  - People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))` (use case #10)
+  - Our current heuristic can be problematic with async functions (use case #unhandled-rejections-1)
+  - No throw on GC yet (Reuben is working on it) (use case #unhandled-rejections-2)
+  - People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))` (use case #unhandled-rejections-3)
 
 ### Forgotten promises:
-  - If I have a promise that never resolves - there is no easy way to know about it.
-  - There is no easy way to address the promises "in a scope" - for example to gather tracing information about all promises in a given request transaction or whatnot. C# synchronization context.
+  - If I have a promise that never resolves - there is no easy way to know about it. (Same as use case #warnings-4)
+  - There is no easy way to address the promises "in a scope" - for example to gather tracing information about all promises in a given request transaction or whatnot. C# synchronization context. (use case #forgotten-1)
 
 ### Testing:
-  - Fake timers break with promises because there is no way to "pump" the event loop. (use case #13)
+  - Fake timers break with promises because there is no way to "pump" the event loop. (#testing-1)
     - Common request from timer users - all of Sinon.JS and Jest 
       - people currently transpiling their async/await code in order to test it - which isn't great.
   - No way to control where an async function is and test different synchronization possibilities easily
-    - For example people request being able to reproduce race conditions. (use case #14)
+    - For example people request being able to reproduce race conditions. (#testing-2)
 
 ### Performance:
   - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`. (use case #15)

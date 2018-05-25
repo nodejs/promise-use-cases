@@ -1,4 +1,4 @@
-### Use Case #5
+### Use Case #stack-traces-1
 
 Name: Stack trace missing when writing promise code and not using the inspector for example in Mocha
 
