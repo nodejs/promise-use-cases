@@ -12,6 +12,8 @@ Please see [the meeting discussion](./meeting-discussion.md) for current use cas
 
 Please consider making a pull request for that are confusing with promises right now or are done better in userland. I will present the results (with your name and contribution) to Node.js core.
 
+You can also open an issue if you prefer!
+
 **No prior Node.js contribution experience required**. If you're a user of promises and thing we should do things better - we would love to hear about your use case.
 
 ### Code of Conduct
