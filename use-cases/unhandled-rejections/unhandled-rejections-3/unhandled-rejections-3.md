@@ -1,4 +1,4 @@
-### Use Case #10
+### Use Case #unhandled-rejections-3
 
 Name: People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))`
 

@@ -1,4 +1,4 @@
-### Use Case #13
+### Use Case #testing-1
 
 Name: Fake timers break with promises because there is no way to "pump" the event loop.
 
