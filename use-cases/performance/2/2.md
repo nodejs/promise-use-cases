@@ -1,4 +1,4 @@
-### Use Case #16
+### Use Case #2
 
 Name: Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions.
 

@@ -2,7 +2,7 @@
 
 Name: here is no easy way to address the promises "in a scope"
 
-Talia is writing code with promises, the has written the following code within an express route
+Talia is writing code with promises, she has written the following code within an express route
 
 ```js
 app.post('/dev/apply', async (request, response) => {

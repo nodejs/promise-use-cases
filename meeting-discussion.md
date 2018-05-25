@@ -46,8 +46,8 @@ How to read this:
     - For example people request being able to reproduce race conditions. (#testing-2)
 
 ### Performance:
-  - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`. (use case #15)
-  - Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions. (use case #16)
+  - Users are still using Bluebird for the heaviest promise loads - especially libraries. We need to convince users that native promises are fast enough. Note this might be due to a better debugging story or `promisifyAll`. (#performance-1)
+  - Async iterators don't have a great performance story yet which might hinder further adoption - although it appears that not that many people are using them so it's hard to draw conclusions. (#performance-2)
 
 ### User Expectations:
   - We don't have a fully promisified or promisifiable core yet - the most common error people have in Stack Overflow is when they wrap promises in other promises needlessly (explicit construction). Users still need to write `new Promise` in some cases.
