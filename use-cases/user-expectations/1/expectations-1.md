@@ -2,7 +2,7 @@
 
 Name: Promisified or Promisifiable core
 
-Sharon is consuming a Promise returning library in NodeJS, he wrote the following code:
+Sharon is consuming a Promise returning library in Node.js, he wrote the following code:
 
 ```js
 function getModule() {

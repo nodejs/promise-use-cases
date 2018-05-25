@@ -14,4 +14,4 @@ Because otherwise we would detect false positive unhandled rejections way mor of
 
 ### What can we maybe do better
 
-Node could expose an `async_hook` for when a promise rejects optionally.
+Node.js could expose an `async_hook` for when a promise rejects optionally.

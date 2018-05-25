@@ -37,4 +37,4 @@ Because async stack traces are currently not exposed outside of the inspector.
 
 ### What can we maybe do better
 
-Node could expose async stack traces sometimes somehow to achieve parity with promise libraries which would make users' lives easier. At least - it should be users' call.
+Node.js could expose async stack traces sometimes somehow to achieve parity with promise libraries which would make users' lives easier. At least - it should be users' call.
