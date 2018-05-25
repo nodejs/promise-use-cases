@@ -20,9 +20,9 @@ Summary of repo issues based on meeting between @benjamingr and @MadaraUchiha
   - Recursive Promise waiting can result in node existing. (use case #warnings-5)
 
 ### Stack Traces:
-  - Stack trace missing when writing promise code and not using the inspector for example in Mocha (use case #5)
-  - Async stack traces cannot be controlled by the user - can't log errors in production (use case #6);
-  - Want to configure when to "break into debugger" or "take core dump" on rejections easily. (use case #7)
+  - Stack trace missing when writing promise code and not using the inspector for example in Mocha (use case #stack-traces-1)
+  - Async stack traces cannot be controlled by the user - can't log errors in production (use case #stack-traces-2)
+  - Want to configure when to "break into debugger" or "take core dump" on rejections easily. (use case #stack-traces-3)
 
 ### Unhandled Rejections:
   - Our current heuristic can be problematic with async functions (use case #8)
@@ -30,7 +30,7 @@ Summary of repo issues based on meeting between @benjamingr and @MadaraUchiha
   - People don't trust automatic unhandled rejection detection and add `.catch(error => console.log('error'))` (use case #10)
 
 ### Forgotten promises:
-  - If I have a promise that never resolves - there is no easy way to know about it.
+  - If I have a promise that never resolves - there is no easy way to know about it. (Same as use case #warnings-4)
   - There is no easy way to address the promises "in a scope" - for example to gather tracing information about all promises in a given request transaction or whatnot. C# synchronization context. (use case #forgotten-1)
 
 ### Testing:

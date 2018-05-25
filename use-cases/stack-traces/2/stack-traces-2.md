@@ -1,4 +1,4 @@
-### Use Case #6
+### Use Case #stack-traces-2
 
 Name: Async stack traces cannot be controlled by the user - can't log errors in production
 

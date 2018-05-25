@@ -1,4 +1,4 @@
-### Use Case #7
+### Use Case #stack-traces-3
 
 Name: Want to configure when to "break into debugger" or "take core dump" on rejections easily.
 
