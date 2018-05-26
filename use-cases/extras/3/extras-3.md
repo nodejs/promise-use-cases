@@ -6,7 +6,7 @@ Peter is writing code with promises and is surprised by the fact he cannot unsub
 
 ### What happens ?
 
-It is impossible to unsubscribe from promises at the moment and it is [inefficient/ugly](https://gist.github.com/getify/1173cac45d15fc4ff0a880f32fd598ab#file-2-js-L93-L125) to write code that does this with a promise subclass that operates correctly.
+It is impossible to unsubscribe from promises at the moment and it is [inefficient/inelegant](https://gist.github.com/getify/1173cac45d15fc4ff0a880f32fd598ab#file-2-js-L93-L125) to write code that does this with a promise subclass that operates correctly.
 
 ### Why it happens ?
 
