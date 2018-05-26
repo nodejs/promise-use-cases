@@ -40,6 +40,8 @@ By virtue of how the promise is constructed (with a synchronous resolution and `
 
 Because the suggested change would be breaking backwards compatibility with current promises, the user should be able to opt-in to the different behavior **prior to the construction**. For example, they could set a flag to turn on a sort of "strict mode" for the Promise construction.
 
+Alternatively, we could provide an `async_hook` to intercept synchronous `throw`s after promise resolution in the promise constructor to enable APMs to log these or to intercept them entirely.
+
 ----
 
 Additional Notes:
