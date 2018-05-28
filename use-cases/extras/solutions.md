@@ -1,5 +1,5 @@
 # Solutions Exploration
-The purpose of this document is to explore possible hooks and/or APIs that may be used resolve at least some of the use-cases presented in the "extras" section of this repo.
+The purpose of this document is to explore possible hooks and/or APIs that may be used to resolve at least some of the use-cases presented in the "extras" section of this repo.
 
 Suggestions will be listed and discussed in an arbitrary order and may contain overlaps in functionality as well as in the problems they intend to solve.
 
@@ -7,6 +7,7 @@ Suggestions will be listed and discussed in an arbitrary order and may contain o
 **Idea:** Give the invoker of an async function (some) ability to control its execution in a backward compatible way.
 
 ### Example
+The following code should print out `Waited 50 ms`:
 ```js
 // Does not exist:
 const {getController} = require('async_hooks');
@@ -30,8 +31,6 @@ const controller = getController(p);
 setTimeoutPromise(50)
   .then(() => controller.return());
 ```
-The above code should print out `Waited 50 ms`
-
 Since the `getController` API only works on promises returned from async function invocations, the invoker can have full control over who gets to abort the operation.
 This can easily be done in a generic way:
 ```js
@@ -42,6 +41,7 @@ function enhance(someAsyncFunction) {
     const controller = getController(p);
 
     return {
+      // If aborted, promise will be fulfilled with an undefined value - this can be modified in various ways:
       promise: Promise.resolve(p),
       abort: () => controller.return(),
     };
@@ -68,17 +68,16 @@ The interception API and implementation given above has a few addressable shortc
 
 1. Cancellation does not work in conjunction with async functions / generators.
 This is because it only keeps track of direct parent-child promise relationships.
-For the same reason, cancellations due not propagate to "followed" promises, e.g.
+For the same reason, cancellations do not propagate to "followed" promises, e.g.
 ```js
 const followed = Promise.resolve();
-
 const parent = Promise.resolve();
 const child = parent.then(() => followed);
 ```
 This can be solved by adding an additional hook such as `interceptFollow(promise, followed)` to keep track of these cases as well.
 
 2. Cancel-aware `finally` must be explicit. This is because the hooks do not provide knowledge of the _kind_ of relationship between a parent and its child nor the type of resolution.
-If we add this information to the promise init hook (e.g. `interceptPromiseInit(promise, parent, kind, next)` where `kind` could be "onFulfilled", "onRejected", "onFinally", etc.)
+If we add this information to the promise init hook (e.g. `interceptPromiseInit(promise, parent, kind, next)` where `kind` could be `onFulfilled`, `onRejected`, `onFinally`, etc.)
 then we could manage "native" `finally`s correctly.
 
 3. Even if the above two issues are resolved as suggested, "static" finally statements in async functions or generators are not guaranteed to be tracked (depending on internal implementation).
