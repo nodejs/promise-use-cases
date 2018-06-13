@@ -3,7 +3,15 @@ The purpose of this document is to explore possible hooks and/or APIs that may b
 
 Suggestions will be listed and discussed in an arbitrary order and may contain overlaps in functionality as well as in the problems they intend to solve.
 
-## Suggestion I - Async Functions Controller
+## Suggestion I - Async Function Hooks
+**Idea:** Provide hooks for prominent moments in an async function's lifecycle and allow values to be replaced by the hooks.
+
+## Example
+See these [TypeScript hook definitions](https://github.com/itaysabato/regrettable/blob/master/hooks/hook-types.ts).
+
+More info [here](https://github.com/itaysabato/regrettable#api-by-example).
+
+## Suggestion II - Async Functions Controller
 **Idea:** Give the invoker of an async function (some) ability to control its execution in a backward compatible way.
 
 ### Example
@@ -58,7 +66,7 @@ const {
 
 ```
 
-## Suggestion II - Promise Interceptors
+## Suggestion III - Promise Interceptors
 **Idea:** Provide new promise hooks that not only _inform_ of promise creations and resolutions but can also _affect_ the outcome.
 
 [This reference implementation](https://gist.github.com/itaysabato/f78394793ae265c7895e862c2b2bd215) demonstrates a possible implementation of a "Bluebird-style" cancellation API on top of native promises via a promise _interception_ hooks API that I drafted therein.
@@ -97,13 +105,13 @@ async function finallySay(something) {
 cancel(finallySay("Cancelled"))
 ```
 
-## Suggestion III - Informative Promise Hooks + Async Functions Controller
+## Suggestion IV - Informative Promise Hooks + Async Functions Controller
 **Idea:** Combine the above two approaches such that async functions and generators are cancelled via `.return()` and relationships between promises are tracked via promise hooks.
 
 ### Details
 **_TBD_**
 
-## Suggestion IV - Benji's Context Idea
+## Suggestion V - Benji's Context Idea
 **Idea:** **_TBD_**
 
 ### Details
