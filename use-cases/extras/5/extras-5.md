@@ -16,8 +16,4 @@ Because of the nature of promises and the fact a `catch` handler can be attached
 ### What should we maybe do better?
 
 There was a lot of interesting work done by @addaleax on this.
-
-Note that in the 3+ years we've had promises in Node.js literally not a single user complained about this in Node.js or the bluebird/q/when/rsvp tracker as far as I know. 
-
-It is still important to some stakeholders and worth discussing.
   
