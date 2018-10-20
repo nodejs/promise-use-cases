@@ -6,7 +6,8 @@ The goal is to provide feedback to Node.js and V8 in order to possibly expose AP
 
 This is to discuss diagnostic/debugging experience that could be done better.
 
-Please see [the meeting discussion](./meeting-discussion.md) for current use cases we have.
+Please see [the meeting discussion](./meeting-discussion.md) and 
+[the use cases folder](./use-cases/) for current use cases we have.
 
 ### Contributing
 
